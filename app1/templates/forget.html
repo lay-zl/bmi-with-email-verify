@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forget</title>
+</head>
+<body>
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    {{message }}
+    {% endfor %}
+</ul>
+{% endif %}
+<form method="post">
+
+    {% csrf_token %}
+    Email : <input type="email" name="email"><br><br>
+    New Password : <input type="password" name="password"><br><br>
+    Confirm Password : <input type="password" name="password2"><br><br>
+    <input type="submit">
+
+</form>
+</body>
+</html>

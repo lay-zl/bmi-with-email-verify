@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<center><h3>Registration Page</h3></center>
+<body>
+<center>
+<form method="post" action="">
+{% csrf_token %}
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+     {{message }}
+    {% endfor %}
+</ul>
+{% endif %}
+
+    {% csrf_token %}
+    User Name:<input type="text" name="username"><br><br>
+    Email : <input type="email" name="email"><br><br>
+    First Name:<input type="text" name="fname"><br><br>
+    Last Name : <input type="text" name="lname"><br><br>
+    Password:<input type="password" name="password"><br><br>
+    <input type="submit" value="register"><br><br>
+
+</form>
+Alreday have account !! <a href="{% url 'login' %}">Login</a>
+</center>
+</body>
+</html>

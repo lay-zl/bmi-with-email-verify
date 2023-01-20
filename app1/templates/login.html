@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<center>
+<h2>Login Page</h2></center>
+<body>
+<center>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    {{message }}
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+<form method="post" action="">
+    {% csrf_token %}
+    User Name : <input type="text" name="name"><br><br>
+    Password :<input type="password" name="password"><br><br>
+
+    <input type="submit"><br><br>
+    forget password ! <a href="{% url 'forget' %}">forget password</a>
+
+</form>
+Dont have account ! <a href="{% url 'register' %}">Create account</a>
+</center>
+</body>
+
+</html>
