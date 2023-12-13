@@ -13,7 +13,6 @@ class CustomUser(AbstractUser):
     weight = models.CharField(max_length=300, default=0)
     auth_token = models.CharField(max_length=100)
 
-
     class Meta:
         db_table = 'custom_user'
 
